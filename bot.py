@@ -4,6 +4,8 @@ from discord.ext import commands
 from subprocess import check_output
 from dotenv import load_dotenv
 
+import command
+
 load_dotenv()
 
 
@@ -19,24 +21,43 @@ def run_discord_bot():
     async def on_ready():
         print(f'{bot.user} is now running')
 
+
+
     @bot.command()
-    async def gpt(ctx, *, args=None):
+    async def tax(ctx, *, args=None):
+        await command.tax(ctx)
+
+
+    @bot.command()
+    async def cake(ctx, *, args=None):
+        if args == "recipe":
+            await command.cake(ctx)
+
+    @bot.command()
+    async def health(ctx):
+        channel = ctx.channel
+        await channel.send("I'm alive!")
+
+
+    @bot.command()
+    async def g(ctx, *, args=None):
         channel = ctx.channel
         if args==None:
             await channel.send("Enter seed")
-            
-            
+              
         elif args:
-            out = check_output(['python', 'sample.py', '--start="%s"' % (args)], text=True)
+            out = check_output(['python', 'nanoGPT/sample.py', '--start="%s"' % (args)], text=True)
             smallOut = out[:1999]
             res = smallOut.replace("-", "")
             test = res.replace("No meta.pkl found, assuming GPT2 encodings...", "")
-            res = test.replace("number of parameters: 29.94M", "")
+            res= test.replace("number of parameters: 29.94M", "")
             test = res.replace("Overriding: start =", "")
             res = test.replace(args, "")
-            await channel.send(res)
+            test = args + res
 
-            
+            await channel.send(test)
+
+      
         
     bot.run(TOKEN)
 
