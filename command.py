@@ -1,21 +1,26 @@
 import discord
+from discord.ext import commands
 import random
 
-
-def test():
-    print("lololol")
-
+# TAX ANALYSE
 async def tax(ctx):
     channel = ctx.channel
+    user = ctx.author
+    
     await channel.send(file=discord.File('./media/veroilmoitus_matkakulut.png'))
     await channel.send(file=discord.File('./media/perusverokortti-palkka.pdf'))
 
+    if channel == "Direct Messag with Unknown User"
+        await user.send(file=discord.File('./media/perusverokortti-palkka.pdf'))
 
-async def health(ctx):
-    channel = ctx.channel
 
+# FOOTBALL ANALYSE
 async def analyze(ctx):
     channel = ctx.channel
+    user = ctx.author
+
+    await user.send("Wake up!!!!")
+
     await channel.send("Analyzing your last football match...")
     await channel.send("""
     Feedback:
@@ -29,7 +34,7 @@ async def what_to_do(ctx):
     channel = ctx.channel
     random.seed()
     num = random.randint(0,2)
-    print(num)
+
     if num == 0:
         await channel.send("""You seem to be hungry.
         You should eat something!""")
