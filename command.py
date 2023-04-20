@@ -14,6 +14,16 @@ async def tax(ctx):
 async def health(ctx):
     channel = ctx.channel
 
+async def analyze(ctx):
+    channel = ctx.channel
+    await channel.send("Analyzing your last football match...")
+    await channel.send("""
+    Feedback:
+    Overall good performance,
+    only small things to improve:""")
+    await channel.send(file=discord.File('./media/football_1.png'))
+    await channel.send("""When your teammates are pushing, you should join them, like in the picture""")
+
 
 async def what_to_do(ctx):
     channel = ctx.channel

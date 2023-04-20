@@ -21,7 +21,9 @@ def run_discord_bot():
     async def on_ready():
         print(f'{bot.user} is now running')
 
-
+    @bot.command()
+    async def analyze(ctx, *, args=None):
+        await command.analyze(ctx)
 
     @bot.command()
     async def tax(ctx, *, args=None):
