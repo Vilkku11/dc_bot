@@ -6,11 +6,11 @@ import random
 async def tax(ctx):
     channel = ctx.channel
     user = ctx.author
-    
+
     await channel.send(file=discord.File('./media/veroilmoitus_matkakulut.png'))
     await channel.send(file=discord.File('./media/perusverokortti-palkka.pdf'))
 
-    if channel == "Direct Messag with Unknown User"
+    if channel == "Direct Message with Unknown User":
         await user.send(file=discord.File('./media/perusverokortti-palkka.pdf'))
 
 
@@ -29,7 +29,7 @@ async def analyze(ctx):
     await channel.send(file=discord.File('./media/football_1.png'))
     await channel.send("""When your teammates are pushing, you should join them, like in the picture""")
 
-
+# WHAT TO DO??!
 async def what_to_do(ctx):
     channel = ctx.channel
     random.seed()
