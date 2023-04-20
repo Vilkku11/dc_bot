@@ -33,11 +33,17 @@ def run_discord_bot():
         if args == "recipe":
             await command.cake(ctx)
 
+
     @bot.command()
     async def health(ctx):
         channel = ctx.channel
         await channel.send("I'm alive!")
 
+
+    @bot.command()
+    async def what(ctx, *, args=None):
+        if args == "to do":
+            await command.what_to_do(ctx)
 
     @bot.command()
     async def g(ctx, *, args=None):
