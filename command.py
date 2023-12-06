@@ -2,7 +2,7 @@ import discord
 
 
 def test():
-    print("lololol")
+    print("test")
 
 async def tax(ctx):
     channel = ctx.channel

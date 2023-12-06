@@ -42,6 +42,16 @@ def run_discord_bot():
     @bot.command()
     async def g(ctx, *, args=None):
         channel = ctx.channel
+
+        substrings = [
+            "-",
+            "No meta.pkl found, assuming GPT2 encodings...",
+            "number of parameters: 29.94M",
+            "Overriding: start =",
+            args
+        ]
+
+
         if args==None:
             await channel.send("Enter seed")
               
@@ -54,7 +64,6 @@ def run_discord_bot():
             test = res.replace("Overriding: start =", "")
             res = test.replace(args, "")
             test = args + res
-
             await channel.send(test)
 
       
