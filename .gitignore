@@ -1,9 +1,9 @@
 
 __pycache__/
 
-/media
+media
 dc/
 model/
-
+venv
 .env
 

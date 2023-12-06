@@ -2,7 +2,14 @@ import discord
 from discord.ext import commands
 import random
 
+
+
+def test():
+    print("test")
+
+
 # TAX ANALYSE
+
 async def tax(ctx):
     channel = ctx.channel
     user = ctx.author
