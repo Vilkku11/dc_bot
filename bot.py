@@ -21,7 +21,9 @@ def run_discord_bot():
     async def on_ready():
         print(f'{bot.user} is now running')
 
-
+    @bot.command()
+    async def analyze(ctx, *, args=None):
+        await command.analyze(ctx)
 
     @bot.command()
     async def tax(ctx, *, args=None):
@@ -33,11 +35,17 @@ def run_discord_bot():
         if args == "recipe":
             await command.cake(ctx)
 
+
     @bot.command()
     async def health(ctx):
         channel = ctx.channel
         await channel.send("I'm alive!")
 
+
+    @bot.command()
+    async def what(ctx, *, args=None):
+        if args == "to do":
+            await command.what_to_do(ctx)
 
     @bot.command()
     async def g(ctx, *, args=None):
